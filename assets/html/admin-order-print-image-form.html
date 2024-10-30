@@ -1,0 +1,21 @@
+<table class="display_meta">
+    <tr>
+        <th>Current print image</th>
+        <th>Update print image</th>
+    </tr>
+    <tr>
+        <td>
+            <a href="#" data-featherlight="%%printImageURL%%"><img src="%%printImageURL%%" style="width: 150px" /></a>
+            </a>
+        </td>
+        <td>
+            <form method="POST" action="" id="change_print_image_%%itemId%%" enctype="multipart/form-data">
+                <input id="print_and_ship_print_image_%%itemId%%" name="print_and_ship_print_image_%%itemId%%" type="file" />
+                <button type="submit" name="replace_print_image" id="submit_%%orderId%%_%%itemId%%">Replace image</button>
+
+                <div id="result_%%itemId%%"></div>
+                <script type="text/javascript"> var myAJAX = { ajaxurl: '%%ajaxurl%%' }; </script>
+            </form>
+        </td>
+    </tr>
+</table>

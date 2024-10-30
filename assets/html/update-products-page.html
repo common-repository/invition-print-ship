@@ -1,0 +1,45 @@
+<div class="wrap">
+	<h1>%%title%%</h1>
+    <p><a href="https://printeers.com/2020/11/10/how-to-use-the-product-updates-in-print-ship-for-woocommerce/">More information about how Product Updates works.</a></p>
+	<form id="actions_form" method="POST">
+
+		<div id="error" style="display: none;" class="notice notice-error"></div>
+
+		<!-- Top Navigation -->
+		<div class="tablenav top">
+			<div class="alignleft actions bulkactions">
+				<p>
+                    <input type="submit" id="doaction_top" class="button action" value="Execute selected actions">
+                    <span class="qtyselected">0</span>&nbsp;%%selected%%
+                </p>
+                <p>
+                    <input class="cb-select-all-products" value="0" type="checkbox" /> %%select_all%%
+                </p>
+			</div>
+		</div>
+		<div id="progress" style="display:none; text-align: center;">
+			<p>0%</p>
+			<progress style="width: 100%;" max="100" value="0"></progress>
+		</div>
+
+		<br class="clear">
+
+
+		<div id="loading"><img src="%%imgurl%%" /></div>
+
+		<div id="accordion"></div>
+
+		<!-- Bottom Navigation -->
+		<div class="tablenav bottom">
+			<div class="alignleft actions bulkactions">
+                <p>
+                    <input class="cb-select-all-products" value="0" type="checkbox" /> %%select_all%%
+                </p>
+				<p>
+                    <input type="submit" id="doaction_bottom" class="button action" value="Execute selected actions">
+                    <span class="qtyselected">0</span>&nbsp;%%selected%%
+                </p>
+			</div>
+		</div>
+	</form>
+</div>

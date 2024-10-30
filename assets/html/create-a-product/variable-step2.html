@@ -1,0 +1,89 @@
+<div class="wrap">
+    <h1>Create a new Printeers product</h1>
+    <p>With this wizard you can create a new Printeers product, with all the settings you need to start selling.</p>
+
+    <h2 class="grey">Step 1 - Select the product type</h2>
+
+    <hr class="clear" />
+
+    <h2>Step 2 - Enter product details</h2>
+    <p>Select all the Brands, Models and Case type & colours you want to use to generate variations. You have to select
+        at least one of each to make this work. Every product have to be an exact match to be added, so if you add
+        Samsung as a brand but don't select any Samsung models, nothing from Samsung will be added.</p>
+
+    <form method="POST" action="?page=print-and-ship-create-a-product&step=3" id="step_2">
+        <div class="w100 clear" id="product_name_div">
+            <h3>Enter the name of your product</3>
+                <input type="text" name="product_name" id="product_name" class="w30" />
+        </div>
+
+        <div class="w30 left" id="pa_device_brand_div">
+            <h3>Select the brands</h3>
+            <a href='#' id='select-all-brands'>select all</a> <a href='#' id='deselect-all-brands'>deselect all</a>
+            <select id="pa_device_brand" name="pa_device_brand[]" multiple="multiple">
+                %%optionsBrand%%
+            </select>
+        </div>
+        <div class="w30 left" id="pa_device_model_div">
+            <h3>Select the models</h3>
+            <a href='#' id='select-all-models'>select all</a> <a href='#' id='deselect-all-models'>deselect all</a>
+            <select id="pa_device_model" name="pa_device_model[]" multiple="multiple">
+                %%optionsModel%%
+            </select>
+        </div>
+        <div class="w40 left" id="pa_case_type_colour_div">
+            <h3>Select the Case type & Colours</h3>
+            <a href='#' id='select-all-case-type-colour'>select all</a> <a href='#'
+                id='deselect-all-case-type-colour'>deselect all</a>
+            <select id="pa_case_type_colour" name="pa_case_type_colour[]" multiple="multiple">
+                %%optionsCaseTypeColour%%
+            </select>
+        </div>
+
+        <div class="w100 clear">
+            <button type="submit" class="invitionButton" id="submit_step_2">Next</button>
+        </div>
+
+    </form>
+
+    <hr class="clear" />
+
+    <h2 class="grey">Step 3 - Select the print image</h2>
+
+</div>
+
+<script type="text/javascript">
+    jQuery('#pa_device_brand').multiSelect();
+    jQuery('#pa_device_model').multiSelect();
+    jQuery('#pa_case_type_colour').multiSelect();
+
+    // Brands functions
+    jQuery('#select-all-brands').click(function () {
+        jQuery('#pa_device_brand').multiSelect('select_all');
+        return false;
+    });
+    jQuery('#deselect-all-brands').click(function () {
+        jQuery('#pa_device_brand').multiSelect('deselect_all');
+        return false;
+    });
+
+    // Models functions
+    jQuery('#select-all-models').click(function () {
+        jQuery('#pa_device_model').multiSelect('select_all');
+        return false;
+    });
+    jQuery('#deselect-all-models').click(function () {
+        jQuery('#pa_device_model').multiSelect('deselect_all');
+        return false;
+    });
+
+    // Case type & colour functions
+    jQuery('#select-all-case-type-colour').click(function () {
+        jQuery('#pa_case_type_colour').multiSelect('select_all');
+        return false;
+    });
+    jQuery('#deselect-all-case-type-colour').click(function () {
+        jQuery('#pa_case_type_colour').multiSelect('deselect_all');
+        return false;
+    });
+</script>

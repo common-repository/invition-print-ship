@@ -1,0 +1,294 @@
+<form id="print_and_ship_config">
+	<input type="hidden" name="_nonce" value="%%nonce%%">
+
+	<h1>%%strInvitionSettings%%</h1>
+	<p>%%strSettingsInfo%%</p>
+
+	<div id="tabs">
+		<ul>
+			<li><a href="#tabs-1">%%strGeneralSettings%%</a></li>
+			<li><a href="#tabs-2">%%strProductUpdates%%</a></li>
+			<li><a href="#tabs-3">%%strEmail%%</a></li>
+			<li><a href="#tabs-4">%%strGiftItems%%</a></li>
+            <li><a href="#tabs-5">%%strShipping%%</a></li>
+            %%addonsTabs%%
+		</ul>
+		<div id="tabs-1">
+			<h2>%%strGeneralSettings%%</h2>
+			<p>%%strAPIinformation%%<a target="_blank" href="https://invition.eu/create-an-account/">%%strCreateAccount%%</a></p>
+
+			<table class="form-table">
+				<tbody>
+					<tr>
+						<th scope="row"><label for="api_user">%%strApiUser%%</label></th>
+						<td><input id="api_user" name="print_and_ship_api_user" class="regular-text" type="text" value="%%api_user%%" /></td>
+					</tr>
+
+					<tr>
+						<th scope="row"><label for="api_key">%%strApiKey%%</label></th>
+						<td><input id="api_key" name="print_and_ship_api_key" class="regular-text" type="text" value="%%api_key%%">
+						</td>
+					</tr>
+
+					<tr>
+						<th scope="row"><label for="test_mode">%%strTestMode%%</label>
+							<br /><a href="https://help.invition.eu/woocommerce-plugin/configuration/setting-test-mode-explained" target="_blank"
+								class="note">More info</p>
+						</th>
+						<td><input type="checkbox" id="test_mode" name="print_and_ship_test_mode" value="1" %%test_mode%% /></td>
+					</tr>
+
+					<tr>
+                        <th scope="row"><label for="debug_mode">%%strDebugMode%%</label></th>
+                        <td>
+                            <input type="checkbox" id="debug_mode" name="print_and_ship_debug_mode" value="1" %%debug_mode%% />
+                            <br />
+                            <p class="description">%%strDebugModeDesc%%</p>
+                        </td>
+					</tr>
+
+					<tr>
+						<th scope="row"><label for="order_status">%%strOrderStatus%%</label>
+							<br /><a href="https://help.invition.eu/woocommerce-plugin/configuration/setting-send-order-to-invition-explained" target="_blank"
+								class="note">More info</p>
+						</th>
+						<td>
+							%%strOrderReached%%
+							<select id="order_status" name="print_and_ship_order_status">
+								%%orderStatusSelection%%
+							</select>
+						</td>
+					</tr>
+
+					<tr>
+						<th scope="row"><label for="allow_backorders">%%strAllowBackorders%%</label>
+							<br /><a href="https://help.invition.eu/woocommerce-plugin/configuration/setting-allow-backorders-explained" target="_blank"
+								class="note">More info</p>
+						</th>
+						</th>
+						<td>
+							<select id="allow_backorders" name="print_and_ship_allow_backorders">
+								%%strAllowBackordersSelection%%
+							</select>
+							<p class="description">%%strAllowBackordersDesc%%</p>
+						</td>
+					</tr>
+
+				</tbody>
+			</table>
+		</div>
+		<div id="tabs-2">
+            <h1>%%strProductUpdates%%</h1>
+            <p>%%strProductUpdatesInfo%%</p>
+            
+            <h2>%%strSimpleProducts%%</h2>
+            <p>%%strSimpleProductsInfo%%</p>
+            
+            <table class="form-table">
+                <tr>
+                    <th scope="row"><label for="auto_add_product_image">%%strAutoAddProductImage%%</label>
+                        <br /><a
+                        href="https://help.invition.eu/woocommerce-plugin/configuration/setting-automatically-add-product-image-when-no-image-is-present-explained"
+                        target="_blank" class="note">More info</p>
+                    </th>
+                <td>
+                    <input type="checkbox" id="auto_add_product_image" name="print_and_ship_auto_add_product_image" value="1"
+                    %%auto_add_product_image%% />
+                    <p class="description">%%strAutoAddProductImageDesc%%</p>
+                </td>
+                </tr>    
+                    <tr>
+                        <th scope="row"><label for="auto_update_srp_simple">%%strAutoUpdateSrpSimple%%</label></th>
+                        <td>
+                            <input type="checkbox" id="auto_update_srp_simple" name="print_and_ship_auto_update_srp_simple" value="1" %%auto_update_srp_simple%% />
+                            <p class="description">%%strAutoUpdateSrpSimpleDesc%%</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            %%strAutomatically%%
+                            <select name="print_and_ship_simple_prices_action">
+                                %%actionOptionsSimple%%
+                            </select>
+                            <input type="text" name="print_and_ship_simple_prices_amount" value="%%simplePricesAmount%%" />
+                            <select name="print_and_ship_simple_prices_type">
+                                %%typeOptionsSimple%%
+                            </select>
+                            %%strToAllPrices%%
+                            <br />
+                            %%strRoundPrices%%
+                            <select name="print_and_ship_simple_prices_round">
+                                %%roundOptionsSimple%%
+                            </select>
+                        </td>
+                    </tr>
+            </table>
+            
+            <h2>%%strVariableProducts%%</h2>
+			<p>%%strVariableProductsInfo%%</p>
+			<table class="form-table">
+				<tbody>
+					<tr>
+						<th scope="row"><label for="auto_add_brands">%%strAutoAddBrands%%</label>
+							<br /><a
+								href="https://help.invition.eu/woocommerce-plugin/configuration/setting-automatically-add-new-brands-to-variable-products-explained"
+								target="_blank" class="note">More info</p>
+						</th>
+						<td>
+
+							<input type="checkbox" id="auto_add_brands" name="print_and_ship_auto_add_brands" value="1" %%auto_add_brands%% />
+							<p class="description">%%strAutoAddBrandsDesc%%</p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><label for="auto_add_models">%%strAutoAddModels%%</label>
+							<br /><a
+								href="https://help.invition.eu/woocommerce-plugin/configuration/setting-automatically-add-new-models-to-variable-products-explained"
+								target="_blank" class="note">More info</p>
+						</th>
+						<td>
+							<input type="checkbox" id="auto_add_models" name="print_and_ship_auto_add_models" value="1" %%auto_add_models%% />
+							<p class="description">%%strAutoAddModelsDesc%%</p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><label for="auto_add_case_type_colour">%%strAutoAddCaseTypeColour%%</label>
+							<br /><a
+								href="https://help.invition.eu/woocommerce-plugin/configuration/setting-automatically-add-new-case-type-and-colour-to-variable-products-explained"
+								target="_blank" class="note">More info</p>
+						</th>
+						<td>
+							<input type="checkbox" id="auto_add_case_type_colour" name="print_and_ship_auto_add_case_type_colour" value="1"
+								%%auto_add_case_type_colour%% />
+							<p class="description">%%strAutoAddCaseTypeColourDesc%%</p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><label for="auto_update_srp">%%strAutoUpdateSrp%%</label></th>
+						<td>
+							<input type="checkbox" id="auto_update_srp" name="print_and_ship_auto_update_srp" value="1" %%auto_update_srp%% />
+							<p class="description">%%strAutoUpdateSrpDesc%%</p>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>
+							%%strAutomatically%%
+							<select name="print_and_ship_variable_prices_action">
+								%%actionOptionsVariable%%
+							</select>
+							<input type="text" name="print_and_ship_variable_prices_amount" value="%%variablePricesAmount%%" />
+							<select name="print_and_ship_variable_prices_type">
+								%%typeOptionsVariable%%
+							</select>
+							%%strToAllPrices%%
+							<br />
+							%%strRoundPrices%%
+							<select name="print_and_ship_variable_prices_round">
+								%%roundOptionsVariable%%
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><label for="auto_enable_variations">%%strAutoEnableVariations%%</label></th>
+						<td>
+							<input type="checkbox" id="auto_enable_variations" name="print_and_ship_auto_enable_variations" value="1"
+								%%auto_enable_variations%% />
+							<p class="description">%%strAutoEnableVariationsDesc%%</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div id="tabs-3">
+			<div class="w50 left">
+				<h2>%%strEmailShipped%%</h2>
+				<p>%%strEmailShippedDesc%%</p>
+				<table class="form-table">
+					<tr>
+						<th scope="row"><label for="email_subject">%%strEmailSubject%%</label></th>
+						<td>
+							<input id="email_subject" name="print_and_ship_email_subject" class="regular-text" type="text" value="%%email_subject%%" />
+							<p class="description">%%strEmailSubjectDesc%%</p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><label for="email_title">%%strEmailTitle%%</label></th>
+						<td>
+							<input id="email_title" name="print_and_ship_email_title" class="regular-text" type="text" value="%%email_title%%" />
+							<p class="description">%%strEmailTitleDesc%%</p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><label for="track_trace_text">%%strTrackTraceText%%</label></th>
+						<td>
+							<textarea id="track_trace_text" name="print_and_ship_track_trace_text" class="regular-text"
+								type="text">%%track_trace_text%%</textarea>
+							<p class="description">%%strTrackTraceTextDesc%%</p>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="w50 right">
+				<h2>Example:</h2>
+				<div class="w80" style="border: 1px solid grey; padding: 20px;">
+					<h1 id="example_email_title">%%email_title%%</h1>
+					<p><span id="example_track_trace_text">%%track_trace_text%%</span></p>
+					<p><a
+							href="https://www.trackyourparcel.eu/index.php?KC=B34WSY34GB34=9DB27ZM1">https://www.trackyourparcel.eu/index.php?KC=B34WSY34GB34=9DB27ZM1</a>
+					</p>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div id="tabs-4">
+			<h2>%%strGiftItemsSettings%%</h2>
+			<p>%%strGiftItemsSettingsDesc%%</p>
+			<table class="form-table">
+				<tr>
+					<th scope="row"><label for="auto_add_ipp_sku_order">%%strAutoAddProductOrder%%</label></th>
+					<td>
+						<input id="auto_add_ipp_sku_order" name="print_and_ship_auto_add_ipp_sku_order" class="regular-text" type="text"
+							value="%%auto_add_ipp_sku_order%%" />
+						<p class="description">%%strAutoAddProductOrderDesc%%</p>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="auto_add_ipp_sku_product">%%strAutoAddProductProduct%%</label></th>
+					<td>
+						<input id="auto_add_ipp_sku_product" name="print_and_ship_auto_add_ipp_sku_product" class="regular-text" type="text"
+							value="%%auto_add_ipp_sku_product%%" />
+						<p class="description">%%strAutoAddProductProductDesc%%</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="tabs-5">
+			<h2>%%strShippingSettings%%</h2>
+			<table class="form-table">
+				<tr>
+					<th scope="row"><label for="shipping_minimal_level">%%strShippingMinimalLevel%%</label></th>
+					<td>
+                        <select id="shipping_minimal_level" name="print_and_ship_shipping_minimal_level">
+                            %%minimumShippingLevelOptions%%
+                        </select>
+						<p class="description">%%strShippingMinimalLevelDesc%%</p>
+					</td>
+				</tr>
+			</table>
+        </div>
+        %%addonsForms%%
+	</div>
+
+	<table>
+		<tr>
+			<td><input type="button" class="invitionButton" id="btn_save_settings" value="%%strSave%%" /></td>
+			<td>
+				<div id="result"></div>
+			</td>
+		</tr>
+	</table>
+
+	%%admin_notice%%
+</form>

@@ -1,0 +1,29 @@
+<div class="wrap">
+    <h1>Create a new Printeers product</h1>
+    <p>With this wizard you can create a new Printeers product, with all the settings you need to start selling.</p>
+
+    <h2 class="grey">Step 1 - Select the product type</h2>
+    <hr class="clear" />
+
+    <h2 class="grey">Step 2 - Enter product details</h2>
+    <hr class="clear" />
+
+    <h2>Step 3 - Select the print image</h2>
+    <p>Upload your design here. This is the design that will be used to print on every order for this product.</p>
+
+    <form method="POST" action="?page=print-and-ship-create-a-product&step=finish" id="step_3"
+        enctype="multipart/form-data">
+
+        <input type="hidden" name="product_id" value="%%productId%%" />
+
+        <div class="w100 clear" id="print_and_ship_print_image_div">
+            <input id="print_and_ship_print_image" type="file" name="print_and_ship_print_image" />
+        </div>
+
+        <div class="w100 clear">
+            <button type="submit" class="invitionButton" id="submit_step_3">Finish the product!</button>
+        </div>
+
+    </form>
+
+</div>

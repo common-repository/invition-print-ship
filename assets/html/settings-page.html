@@ -1,0 +1,355 @@
+<form id="print_and_ship_config">
+    <input type="hidden" name="_nonce" value="%%nonce%%">
+    
+    <h1>%%strPrinteersSettings%%</h1>
+    <p>%%strSettingsInfo%%</p>
+    
+    <div id="tabs">
+        <ul>
+            <li><a href="#tabs-1">%%strGeneralSettings%%</a></li>
+            <li><a href="#tabs-2">%%strProductUpdates%%</a></li>
+            <li><a href="#tabs-3">%%strEmail%%</a></li>
+            <li><a href="#tabs-4">%%strGiftItems%%</a></li>
+            <li><a href="#tabs-5">%%strShipping%%</a></li>
+        </ul>
+        <div id="tabs-1">
+            <h1>%%strGeneralSettings%%</h1>
+            <p>%%strAPIinformation%%<a target="_blank" href="https://printeers.com/register/automatic-ordering/">%%strCreateAccount%%</a></p>
+            
+            <table class="form-table">
+                <tbody>
+                    <tr>
+                        <th scope="row"><label for="api_user">%%strApiUser%%</label></th>
+                        <td><input id="api_user" name="print_and_ship_api_user" class="regular-text" type="text" value="%%api_user%%" /></td>
+                    </tr>
+                    
+                    <tr>
+                        <th scope="row"><label for="api_key">%%strApiKey%%</label></th>
+                        <td><input id="api_key" name="print_and_ship_api_key" class="regular-text" type="text" value="%%api_key%%">
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <th scope="row"><label for="test_mode">%%strDemoMode%%</label>
+                            <p><em>Please do not use the demo mode unless you know what you are doing.</em></p>
+                        </th>
+                        <td><input type="checkbox" id="test_mode" name="print_and_ship_test_mode" value="1" %%test_mode%% /></td>
+                    </tr>
+                    
+                    <tr>
+                        <th scope="row"><label for="debug_mode">%%strDebugMode%%</label></th>
+                        <td>
+                            <input type="checkbox" id="debug_mode" name="print_and_ship_debug_mode" value="1" %%debug_mode%% />
+                            <br />
+                            <p class="description">%%strDebugModeDesc%%</p>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <th scope="row"><label for="order_status">%%strOrderStatus%%</label>
+                            <br /><a href="https://printeers.com/2020/11/13/how-to-place-an-order-from-woocommerce/" target="_blank"
+                            class="note">How to make sure an order is placed at Printeers</p>
+                        </th>
+                        <td>
+                            %%strOrderReached%%
+                            <select id="order_status" name="print_and_ship_order_status">
+                                %%orderStatusSelection%%
+                            </select>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <th scope="row"><label for="allow_backorders">%%strAllowBackorders%%</label></th>
+                    </th>
+                    <td>
+                        <select id="allow_backorders" name="print_and_ship_allow_backorders">
+                            %%strAllowBackordersSelection%%
+                        </select>
+                        <p class="description">%%strAllowBackordersDesc%%</p>
+                    </td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+    <div id="tabs-2">
+        <h1>%%strProductUpdates%%</h1>
+        <p>%%strProductUpdatesInfo%%</p>
+        
+        <h2>%%strSimpleProducts%%</h2>
+        <p>%%strSimpleProductsInfo%%</p>
+        
+        <table class="form-table">
+            <tr>
+                <th scope="row"><label for="auto_add_product_image">%%strAutoAddProductImage%%</label></th>
+                <td>
+                    <input type="checkbox" id="auto_add_product_image" name="print_and_ship_auto_add_product_image" value="1"
+                    %%auto_add_product_image%% />
+                    <p class="description">%%strAutoAddProductImageDesc%%</p>
+                </td>
+            </tr>    
+            <tr>
+                <th scope="row"><label for="auto_update_srp_simple">%%strAutoUpdateSrpSimple%%</label></th>
+                <td>
+                    <input type="checkbox" id="auto_update_srp_simple" name="print_and_ship_auto_update_srp_simple" value="1" %%auto_update_srp_simple%% />
+                    <p class="description">%%strAutoUpdateSrpSimpleDesc%%</p>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <p>
+                        %%strAutomatically%%
+                        <select name="print_and_ship_simple_prices_action">
+                            %%actionOptionsSimple%%
+                        </select>
+                        <input type="text" name="print_and_ship_simple_prices_amount" value="%%simplePricesAmount%%" />
+                        <select name="print_and_ship_simple_prices_type">
+                            %%typeOptionsSimple%%
+                        </select>
+                        %%strToAllPrices%%
+                        <select name="print_and_ship_simple_prices_base">
+                            %%simplePricesBase%%
+                        </select>
+                        <br />
+                        %%strRoundPrices%%
+                        <select name="print_and_ship_simple_prices_round">
+                            %%roundOptionsSimple%%
+                        </select>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <p class="description">%%strVATNotice%%</p>
+                </td>
+            </tr>
+        </table>
+    
+        <h2>%%strVariableProducts%%</h2>
+        <p>%%strVariableProductsInfo%%</p>
+        <table class="form-table">
+            <tbody>
+                <tr>
+                    <th scope="row"><label for="auto_add_brands">%%strAutoAddBrands%%</label></th>
+                    <td>
+                        <input type="checkbox" id="auto_add_brands" name="print_and_ship_auto_add_brands" value="1" %%auto_add_brands%% />
+                        <p class="description">%%strAutoAddBrandsDesc%%</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="auto_add_models">%%strAutoAddModels%%</label></th>
+                    <td>
+                        <input type="checkbox" id="auto_add_models" name="print_and_ship_auto_add_models" value="1" %%auto_add_models%% />
+                        <p class="description">%%strAutoAddModelsDesc%%</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="auto_add_case_type_colour">%%strAutoAddCaseTypeColour%%</label></th>
+                    <td>
+                        <input type="checkbox" id="auto_add_case_type_colour" name="print_and_ship_auto_add_case_type_colour" value="1"
+                        %%auto_add_case_type_colour%% />
+                        <p class="description">%%strAutoAddCaseTypeColourDesc%%</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="print_and_ship_render_image_for">%%strRenderImageFor%%</label></th>
+                    <td>
+                        <p class="description">
+                            %%strVariable%% &nbsp;
+                            <input type="checkbox" id="print_and_ship_render_image_for_variable" name="print_and_ship_render_image_for_variable" value="1" 
+                            %%renderImageForVariable%% />
+                        </p>
+                        <p class="description">
+                            %%strVariation%% &nbsp;
+                            <input type="checkbox" id="print_and_ship_render_image_for_variation" name="print_and_ship_render_image_for_variation" value="1" 
+                            %%renderImageForVariation%% />
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="print_and_ship_render_image_base_sku">%%strRenderImageBaseSku%%</label></th>
+                    <td>
+                        <input id="print_and_ship_render_image_base_sku" name="print_and_ship_render_image_base_sku" class="regular-text"
+                        type="text" value="%%renderImageBaseSku%%" />
+                        <p class="description">%%strRenderImageBaseSkuDesc%%</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="print_and_ship_delete_images_when_delete_variable">%%strDeleteImagesWhenDeleteVariable%%</label></th>
+                    <td>
+                        <input type="checkbox" id="print_and_ship_delete_images_when_delete_variable" name="print_and_ship_delete_images_when_delete_variable" value="1"
+                        %%deleteImagesWhenDeleteVariable%% />
+                        <p class="description">%%strDeleteImagesWhenDeleteVariableDesc%%</p>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="auto_update_srp">%%strAutoUpdateSrp%%</label></th>
+                    <td>
+                        <input type="checkbox" id="auto_update_srp" name="print_and_ship_auto_update_srp" value="1" %%auto_update_srp%% />
+                        <p class="description">%%strAutoUpdateSrpDesc%%</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <p>
+                            %%strAutomatically%%
+                            <select name="print_and_ship_variable_prices_action">
+                                %%actionOptionsVariable%%
+                            </select>
+                            <input type="text" name="print_and_ship_variable_prices_amount" value="%%variablePricesAmount%%" />
+                            <select name="print_and_ship_variable_prices_type">
+                                %%typeOptionsVariable%%
+                            </select>
+                            %%strToAllPrices%%
+                            <select name="print_and_ship_variable_prices_base">
+                                %%variablePricesBase%%
+                            </select>
+                            <br />
+                            %%strRoundPrices%%
+                            <select name="print_and_ship_variable_prices_round">
+                                %%roundOptionsVariable%%
+                            </select>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <p class="description">%%strVATNotice%%</p>
+                    </td>
+                </tr>    
+                <tr>
+                    <th scope="row"><label for="auto_enable_variations">%%strAutoEnableVariations%%</label></th>
+                    <td>
+                        <input type="checkbox" id="auto_enable_variations" name="print_and_ship_auto_enable_variations" value="1"
+                        %%auto_enable_variations%% />
+                        <p class="description">%%strAutoEnableVariationsDesc%%</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="tabs-3">
+        <div class="w50 left">
+            <h1>%%strEmailShipped%%</h1>
+            <p>%%strEmailShippedDesc%%</p>
+            <p><a href="https://printeers.com/2020/11/11/how-to-manage-the-woocommerce-shipping-emails/">More information about configuring shipping e-mails.</a></p>
+            <table class="form-table">
+                <tr>
+                    <th scope="row"><label for="email_subject">%%strEmailSubject%%</label></th>
+                    <td>
+                        <input id="email_subject" name="print_and_ship_email_subject" class="regular-text" type="text" value="%%email_subject%%" />
+                        <p class="description">%%strEmailSubjectDesc%%</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="email_title">%%strEmailTitle%%</label></th>
+                    <td>
+                        <input id="email_title" name="print_and_ship_email_title" class="regular-text" type="text" value="%%email_title%%" />
+                        <p class="description">%%strEmailTitleDesc%%</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="track_trace_text">%%strTrackTraceText%%</label></th>
+                    <td>
+                        <textarea id="track_trace_text" name="print_and_ship_track_trace_text" class="regular-text"
+                        type="text">%%track_trace_text%%</textarea>
+                        <p class="description">%%strTrackTraceTextDesc%%</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="w50 right">
+            <h2>Example:</h2>
+            <div class="w80" style="border: 1px solid grey; padding: 20px;">
+                <h1 id="example_email_title">%%email_title%%</h1>
+                <p><span id="example_track_trace_text">%%track_trace_text%%</span></p>
+                <p><a
+                    href="https://www.trackyourparcel.eu/index.php?KC=B34WSY34GB34=9DB27ZM1">https://www.trackyourparcel.eu/index.php?KC=B34WSY34GB34=9DB27ZM1</a>
+                </p>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div id="tabs-4">
+        <h1>%%strGiftItemsSettings%%</h1>
+        <p>%%strGiftItemsSettingsDesc%%</p>
+        <table class="form-table">
+            <tr>
+                <th scope="row"><label for="auto_add_ipp_sku_order">%%strAutoAddProductOrder%%</label></th>
+                <td>
+                    <input id="auto_add_ipp_sku_order" name="print_and_ship_auto_add_ipp_sku_order" class="regular-text" type="text"
+                    value="%%auto_add_ipp_sku_order%%" />
+                    <p class="description">%%strAutoAddProductOrderDesc%%</p>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row"><label for="auto_add_ipp_sku_product">%%strAutoAddProductProduct%%</label></th>
+                <td>
+                    <input id="auto_add_ipp_sku_product" name="print_and_ship_auto_add_ipp_sku_product" class="regular-text" type="text"
+                    value="%%auto_add_ipp_sku_product%%" />
+                    <p class="description">%%strAutoAddProductProductDesc%%</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="tabs-5">
+        <h1>%%strShippingSettings%%</h1>
+        <p><a href="https://printeers.com/2020/11/11/how-to-manage-shipping-in-the-print-ship-plugin-for-woocommerce/">More information about shipping configuration.</a></p>
+        <table class="form-table">
+            <tr>
+                <th scope="row"><label for="shipping_minimal_level">%%strShippingMinimalLevel%%</label></th>
+                <td>
+                    <select id="shipping_minimal_level" name="print_and_ship_shipping_minimal_level">
+                        %%minimumShippingLevelOptions%%
+                    </select>
+                    <p class="description">%%strShippingMinimalLevelDesc%%</p>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row"><label for="automatic_shipping_calculator">%%strAutomaticShippingCalculator%%</label></th>
+                <td>
+                    %%strAutomatically%%
+                    <select name="print_and_ship_automatic_shipping_action">
+                        %%automaticShippingActionOptions%%
+                    </select>
+                    <input type="text" name="print_and_ship_automatic_shipping_amount" value="%%automaticShippingAmount%%" />
+                    <select name="print_and_ship_automatic_shipping_type">
+                        %%automaticShippingTypeOptions%%
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>
+                    %%strMultiplyBy%%
+                    <input type="text" name="print_and_ship_automatic_shipping_multiplier" value="%%automaticShippingMultiplier%%" />
+                    <p class="description">%%strMultiplyByDesc%%</p>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>
+                    %%strRoundPrices%%
+                    <select name="print_and_ship_automatic_shipping_round">
+                        %%automaticShippingRoundOptions%%
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<table>
+    <tr>
+        <td><input type="button" class="invitionButton" id="btn_save_settings" value="%%strSave%%" /></td>
+        <td>
+            <div id="result"></div>
+        </td>
+    </tr>
+</table>
+
+%%admin_notice%%
+</form>

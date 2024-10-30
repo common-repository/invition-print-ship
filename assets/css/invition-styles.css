@@ -1,0 +1,68 @@
+/* Fonts */
+@font-face { font-family: 'Open Sans'; src: url('../fonts/OpenSans-Regular.ttf'); }
+@font-face { font-family: 'Raleway'; src: url('../fonts/Raleway-Regular.ttf'); }
+
+html, body, p, a { font-family: 'Open Sans'; }
+h1, h2, h3 { font-family: 'Raleway'; font-weight: normal; margin-top: 25px; }
+h1 { font-size: 28px !important; }
+h2 { font-size: 22px !important; }
+h3 { font-size: 14px !important; font-weight: bold; }
+
+a { color: #9F2B33; }
+.note { font-size: 12px; font-style: italic; }
+
+.grey { color: #AAAAAA; }
+.red { color: red; }
+
+/* Layout */
+.left { float: left; }
+.right { float: right; }
+.clear { clear: both;}
+
+.w10 { width: 10%; min-width: 100px; }
+.w20 { width: 20%; min-width: 250px; }
+.w30 { width: 30%; min-width: 500px; }
+.w40 { width: 40%; min-width: 500px; }
+.w50 { width: 50%; min-width: 600px; }
+.w60 { width: 60%; }
+.w70 { width: 70%; }
+.w80 { width: 80%; }
+.w90 { width: 90%; }
+.w100 { width: 100%; }
+
+/* Styles */
+
+.invitionButton {
+    display: table;
+    background-color: #9F2B33 !important;
+    color: #FFFFFF !important;
+    padding: 16px 40px 16px 40px !important;
+    text-decoration: none;
+    margin-bottom: 25px;
+    border: none;
+}
+
+.invitionButton:hover {
+    background-color: #b8323b !important;
+    cursor: pointer;
+}
+
+.form-table th {
+    font-weight: 400;
+}
+
+hr {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.invitionImage {
+    border: 1px solid #CCCCCC;
+    /* height: 300px; */
+    max-width: 500px;
+}
+
+/* Fix for left border in custom tabs */
+.ui-tabs-nav .ui-state-default:not(:first-child) {
+    border-left: 0px !important;
+}

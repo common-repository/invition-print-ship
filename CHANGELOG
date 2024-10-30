@@ -1,0 +1,174 @@
+# Changelog
+All notable changes to this project will be documented in this file.
+
+Please note! If you are updating from beta to the version on the WordPress directory, please contact us first!
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [1.7.3]
+### Added
+- Select all checkboxes on the Product Updates page
+
+## [1.7.2]
+### Changed
+- Bugfix: Called default PHP function within PrintAndShip namespace
+
+## [1.7.1]
+## Added
+- WooCommerce version check
+- Debuglog can now be enabled/disabled in the settings
+
+### Changed
+- Bugfix: Check if we have a print image before trying to use it in adminGetPrintImage()
+- Bugfix: runImportOrdersCron fires on WordPress load, should only fire on cron run
+
+## [1.7.0]
+### Added
+- Price management for simple products
+
+### Changed
+- Product updates page shows difference between simple and variable products
+- Bugfix: Undefined and unused variable in Create a product finish3
+
+## [1.6.5]
+### Changed
+- Bugfix: Callback was not working because of improper namespace implementation
+
+## [1.6.4]
+### Removed
+- Deleted all frontend functionality as this is never used by customers
+- Rewritten some logic about print images
+
+## [1.6]
+### Changed
+- Removed all prefixes from function names and added a namespace to the plugin
+
+## [1.5.3] 2019-10-31
+### Added
+- Create simple products page checks if Zakeke addon is active, if yes: show extra option for adding products.
+- WooCommerce order status 'Ready for production'
+
+### Changed
+- Default status setting first checks if Zakeke is active
+- Orders are now placed with a 1 minute cron instead of with a WooCommerce status change hook
+
+## [1.5.2] 2019-09-18
+### Added
+- Minimum shipping level can now be set as master value
+
+### Changed
+- Part of code formatted to PSR-2 standards (rest will follow in later updates)
+- Added a function check to admin-page.php to prevent errors when WooCommerce is not enabled
+- Rewritten stock import query
+
+### Removed
+- Removed function findProductID from class-woo.php and stock importer to prevent unneccessary queries
+
+## [1.5.1] 2019-08-23
+### Added
+- Packing and gift items can be automatically added to an order now
+
+### Changed
+- Removed unused code from class-woo.php
+
+## [1.5] 2019-07-10
+### Added
+- Settings for shipment e-mail
+- Added tabs on settings page to create a better overview
+
+### Changed
+- Bugfix: Undefined property: stdClass::$amount_left in classes/class-new-products-table.php on line 337
+- Removed tablenav bottom actions at Simple products page to prevent confusion
+- Bugfix: Search field in Create simple product was not displayed
+- Bugfix: Call to a member function is_type() on boolean in /wp-content/plugins/invition-print-ship/classes/class-woo.php:219
+- Rewritte prepareOrder function to make it more readable and cleaner
+- Raised timeout for wp_remote_post to make sure big images and slow servers still work
+
+## [1.4.2] 2019-06-19
+### Added
+- Settings for add/subtract a certain amount or percentage to or from generated variable products
+- Setting for rounding prices
+- Function in class.product_update to calculate prices based on settings
+
+### Changed
+- Bugfix: non existing products conflict with print image uploader
+- Bugfix: SRP change only updated _regular_price, now also updates _price
+
+## [1.4.1] - 2019-05-08
+### Changed
+- Moved logic for selecting print image to separate function print_and_ship_adminGetPrintImage
+- Bugfix: get_meta on null in assets/php/admin-order-print-image.php line 15
+- Tested for WordPress 5.2
+
+## [1.4] - 2019-05-01
+### Added
+- When an order is not committed, the print image can be changed
+- Print image is displayed on the order page
+- Featherlight lightbox included because default Thickbox works bad
+
+### Changed
+- Improved error reporting on some functions
+- woo->uploadImage now first looks for a print image on orderline level
+
+## [1.3.3] - 2019-03-25
+### Changed
+- Bugfix: Issue with discontinued products resolved
+
+## [1.3.2] - 2019-03-15
+### Added
+- Added action to remove variations when they are discontinued to keep the site clean
+
+### Changed
+- Bug fixed which caused discontinued products to be added
+
+## [1.3.1] - 2019-03-15
+### Added
+- Links to help pages for more information
+- Added error reporting in Product Updates page
+- Force disable notices in WP API JSON results
+
+### Changed
+- Solved some PHP notices
+- Form labels in settings page are now correct
+
+## [1.3] - 2019-03-08
+### Added
+- Created a wizard to add products to WooCommerce easier
+- Added Invition fonts and colours to the plugin
+
+### Removed
+- Link to Add products was removed from the menu and moved to the wizard
+
+## [1.2.2] - 2019-02-28
+### Added
+- Allow backorders setting (User now decides if backorders are allowed (if allowed by Invition))
+
+## [1.2.1] - 2019-02-19
+### Changed
+- Security fix, replace esc_attr function for sanitize_text_field
+
+## [1.2] - 2019-02-19
+### Added
+- Display plugin version on support page
+- Product updates page now displays notice when no actions are found
+- Product updates now checks if an attribute was added to the database before suggesting to connect it to a product
+
+### Changed
+- Renamed wp_options and wp_product_meta entries, new prefix is print_and_ship (BREAKING CHANGE)
+- API callback url changed to /wp-json/invition-and-print-ship/v1/callback for consistency (BREAKING CHANGE)
+- Replaced prefix itw_ in all function names and file names
+- Function names after the prefix are now in camelCase to keep it readable
+- Plugin main file now called invition-print-and-ship.php (used to be ipp-to-woo.php)
+
+### Removed
+- Removed function itw_admin_footer() because it's not neccessary and it wasn't working anyway
+- Function which checks Imagick status is now removed from support and settings page, Imagick support remains for now
+
+## [1.1.4] - 2019-02-18
+### Added
+- Changelog file added
+
+### Changed
+- Moved get_option requests in class-product-update.php to function top to prevent unneccessary db roundtrips
+- Rebuilt discover actions queries to make the code faster and more efficient

@@ -1,0 +1,200 @@
+<?xml version="1.0"?>
+<ruleset name="Qurl">
+	<!--
+	The name attribute of the ruleset tag is displayed
+	when running PHP_CodeSniffer with the -v command line
+	argument. The description tag below is not displayed anywhere
+	except in this file, so it can contain information for
+	developers who may change this file in the future.
+	-->
+	<description>Qurl Coding Standard</description>
+
+	<!--
+	You can hard-code ignore patterns directly into your
+	custom standard so you don't have to specify the
+	patterns on the command line.
+	-->
+	<exclude-pattern>*/lib/*</exclude-pattern>
+	<exclude-pattern>*/tests/*</exclude-pattern>
+
+	<!--
+	Include all sniffs in the Generic standard.
+	 -->
+	<rule ref="Generic">
+		<exclude name="Generic.Commenting.DocComment.MissingShort" />
+		<exclude name="Generic.Commenting.DocComment.NonParamGroup" />
+		<exclude name="Generic.Commenting.DocComment.ShortNotCapital" />
+		<exclude name="Generic.Commenting.DocComment.TagValueIndent" />
+		<exclude name="Generic.Files.EndFileNewline" />
+		<exclude name="Generic.Files.InlineHTML" />
+		<exclude name="Generic.Formatting.DisallowMultipleStatements" />
+		<exclude name="Generic.Formatting.MultipleStatementAlignment" />
+		<exclude name="Generic.Formatting.NoSpaceAfterCast" />
+		<exclude name="Generic.Files.OneClassPerFile.MultipleFound" /> <!-- Only for this project -->
+		<exclude name="Generic.PHP.CharacterBeforePHPOpeningTag" />
+		<exclude name="Generic.PHP.LowerCaseConstant" />
+		<exclude name="Generic.WhiteSpace.DisallowTabIndent" />
+		<exclude name="Generic.WhiteSpace.ScopeIndent" />
+	</rule>
+
+	<rule ref="Generic.Arrays.DisallowLongArraySyntax.Found">
+		<severity>0</severity>
+	</rule>
+
+	<rule ref="Generic.Arrays.DisallowShortArraySyntax.Found">
+		<type>warning</type>
+	</rule>
+
+	<rule ref="Generic.CodeAnalysis.UnusedFunctionParameter" />
+
+	<rule ref="Generic.Commenting.Todo" />
+	<rule ref="Generic.Commenting.Todo.CommentFound">
+		<message>Please review this TODO comment: %s</message>
+		<severity>3</severity>
+	</rule>
+
+	<rule ref="Generic.ControlStructures.InlineControlStructure" />
+
+	<rule ref="Generic.Files.LineEndings">
+		<properties>
+			<property name="eolChar" value="\n" />
+		</properties>
+	</rule>
+
+	<rule ref="Generic.Formatting.MultipleStatementAlignment">
+		<properties>
+			<property name="maxPadding" value="8"/>
+			<property name="ignoreMultiLine" value="true"/>
+			<property name="error" value="true"/>
+		</properties>
+	</rule>
+
+	<rule ref="Generic.Functions.FunctionCallArgumentSpacing.SpaceBeforeComma">
+		<severity>0</severity>
+	</rule>
+
+	<rule ref="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine">
+		<severity>0</severity>
+	</rule>
+
+	<rule ref="Generic.Metrics.CyclomaticComplexity">
+		<properties>
+			<property name="complexity" value="10">
+				<severity>1</severity>
+			</property>
+			<property name="absoluteComplexity" value="20">
+				<severity>3</severity>
+			</property>
+		</properties>
+	</rule>
+
+	<rule ref="Generic.NamingConventions.CamelCapsFunctionName.NotCamelCaps">
+		<severity>0</severity>
+	</rule>
+
+	<rule ref="Generic.NamingConventions.CamelCapsFunctionName.ScopeNotCamelCaps">
+		<severity>0</severity>
+	</rule>
+
+	<rule ref="Generic.WhiteSpace.DisallowSpaceIndent">
+		<severity>3</severity>
+	</rule>
+
+	<!--
+	Include all sniffs in the PEAR standard. Note that the
+	path to the standard does not have to be specified as the
+	PEAR standard exists inside the PHP_CodeSniffer install
+	directory.
+	 -->
+	<rule ref="PEAR">
+		<exclude name="PEAR.Commenting.FileComment.MissingAuthorTag" />
+		<exclude name="PEAR.Commenting.FileComment.MissingCategoryTag" />
+		<exclude name="PEAR.Commenting.FileComment.MissingPackageTag" />
+		<exclude name="PEAR.Commenting.FileComment.MissingLicenseTag" />
+		<exclude name="PEAR.Commenting.FileComment.MissingVersion" />
+		<exclude name="PEAR.Commenting.FileComment.InvalidVersion" />
+		<exclude name="PEAR.Commenting.ClassComment.CategoryTagOrder" />
+		<exclude name="PEAR.Commenting.FileComment.CopyrightTagOrder" />
+		<exclude name="PEAR.Commenting.ClassComment.PackageTagOrder" />
+		<exclude name="PEAR.Commenting.ClassComment.IncompleteCopyright" />
+		<exclude name="PEAR.Commenting.ClassComment.CopyrightTagOrder" />
+		<exclude name="PEAR.Commenting.ClassComment.IncompleteLicense" />
+		<exclude name="PEAR.Commenting.ClassComment.MissingCategoryTag" />
+		<exclude name="PEAR.Commenting.ClassComment.MissingLicenseTag" />
+		<exclude name="PEAR.Commenting.ClassComment.MissingLinkTag" />
+		<exclude name="PEAR.Commenting.ClassComment.AuthorTagOrder" />
+		<exclude name="PEAR.Commenting.FunctionComment.SpacingAfterParamName" /> //
+		<exclude name="PEAR.Commenting.FunctionComment.SpacingAfterParamType" />
+		<exclude name="PEAR.Functions.FunctionCallSignature" />
+		<exclude name="PEAR.Functions.FunctionDeclaration" />
+		<exclude name="PEAR.NamingConventions.ValidClassName" />
+		<exclude name="PEAR.NamingConventions.ValidFunctionName" />
+		<exclude name="PEAR.NamingConventions.ValidVariableName" />
+		<exclude name="PEAR.WhiteSpace.ScopeIndent" />
+		<exclude name="PEAR.WhiteSpace.ScopeClosingBrace" />
+	</rule>
+
+	<rule ref="PEAR.Commenting.ClassComment.MissingTag">
+		<severity>0</severity>
+	</rule>
+
+	<rule ref="PEAR.Commenting.ClassComment.TagIndent">
+		<severity>0</severity>
+	</rule>
+
+	<rule ref="PEAR.Classes.ClassDeclaration.OpenBraceNewLine">
+		<severity>0</severity>
+	</rule>
+
+	<rule ref="PEAR.Commenting.FunctionComment.SpacingAfterParams">
+		<severity>0</severity>
+	</rule>
+
+	<rule ref="PEAR.Commenting.FunctionComment.ParameterCommentsNotAligned">
+		<severity>0</severity>
+	</rule>
+
+	<rule ref="PEAR.Commenting.FunctionComment.ParameterNamesNotAligned">
+		<severity>0</severity>
+	</rule>
+
+    <rule ref="PEAR.ControlStructures.MultiLineCondition.SpacingAfterOpenBrace">
+        <severity>0</severity>
+    </rule>
+
+	<rule ref="PEAR.Files.IncludingFile.BracketsNotRequired">
+		<severity>3</severity>
+	</rule>
+
+    <rule ref="PEAR.Functions.FunctionCallSignature">
+        <properties>
+            <property name="requiredSpacesAfterOpen" value="1" />
+            <property name="requiredSpacesBeforeClose" value="1" />
+        </properties>
+    </rule>
+
+	<!-- For some reason the LineLength rule must be almost at the end of the XML file -->
+	<rule ref="Generic.Files.LineLength">
+		<properties>
+			<property name="lineLimit" value="160">
+				<severity>1</severity>
+			</property>
+			<property name="absoluteLineLimit" value="200">
+				<severity>3</severity>
+			</property>
+		</properties>
+	</rule>
+
+	<!--
+	There is a special internal error message produced by PHP_CodeSniffer
+	when it is unable to detect code in a file, possible due to
+	the use of short open tags even though php.ini disables them.
+	You can disable this message in the same way as sniff messages.
+
+	Again, the code here will be displayed in the PHP_CodeSniffer
+	output when using the -s command line argument while checking a file.
+	-->
+	<rule ref="Internal.NoCodeFound">
+		<severity>0</severity>
+	</rule>
+</ruleset>
